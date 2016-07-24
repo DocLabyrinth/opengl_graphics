@@ -5,7 +5,7 @@ use image::{ self, DynamicImage, RgbaImage };
 use std::path::Path;
 
 use {
-    ops, ImageSize, CreateTexture, UpdateTexture, TextureSettings,
+    ops, graphics, CreateTexture, UpdateTexture, TextureSettings,
     Format, Filter
 };
 
@@ -135,7 +135,7 @@ impl Drop for Texture {
     }
 }
 
-impl ImageSize for Texture {
+impl graphics::ImageSize for Texture {
     fn get_size(&self) -> (u32, u32) {
         (self.width, self.height)
     }
